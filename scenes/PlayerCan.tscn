@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Can.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+
+[node name="PlayerCan" type="RigidBody"]
+mass = 3.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.4, 0, 0, 0, 0.45, 0, 0, 0, 0.4, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Can" parent="CollisionShape" instance=ExtResource( 1 )]
+transform = Transform( 2.5, 0, 0, 0, 2.22222, 0, 0, 0, 2.5, 0, 0, 0 )

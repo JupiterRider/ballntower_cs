@@ -1,0 +1,263 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/SettingsMenu.cs" type="Script" id=1]
+[ext_resource path="res://fonts/Jockey_One/JockeyOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/SettingsMenu.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.270588, 0.54902, 0.654902, 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -910.0
+margin_top = -490.0
+margin_right = 910.0
+margin_bottom = 490.0
+
+[node name="LabelTitel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -149.5
+margin_right = 149.5
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.494118, 0.784314, 0.313726, 1 )
+custom_colors/font_color_shadow = Color( 0.337255, 0.490196, 0.27451, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="LabelMouseSensitivity" type="Label" parent="Control"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -340.0
+margin_right = 599.0
+margin_bottom = -245.0
+custom_fonts/font = SubResource( 2 )
+text = "Mouse Sensitivity (0.001 - 1)"
+align = 1
+valign = 1
+
+[node name="LabelFullscreen" type="Label" parent="Control/LabelMouseSensitivity"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 226.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "Fullscreen"
+align = 1
+valign = 1
+
+[node name="LabelVSync" type="Label" parent="Control/LabelMouseSensitivity/LabelFullscreen"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 132.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "VSync"
+align = 1
+valign = 1
+
+[node name="LabelLockFPS" type="Label" parent="Control/LabelMouseSensitivity/LabelFullscreen/LabelVSync"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 423.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "Force FPS (30 - 240)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelShowFPS" type="Label" parent="Control/LabelMouseSensitivity/LabelFullscreen/LabelVSync/LabelLockFPS"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 209.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "Show FPS"
+align = 1
+valign = 1
+
+[node name="LabelAA" type="Label" parent="Control/LabelMouseSensitivity/LabelFullscreen/LabelVSync/LabelLockFPS/LabelShowFPS"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 273.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "Anti Aliasing"
+align = 1
+valign = 1
+
+[node name="LabelShadows" type="Label" parent="Control/LabelMouseSensitivity/LabelFullscreen/LabelVSync/LabelLockFPS/LabelShowFPS/LabelAA"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = 47.5
+margin_right = 354.0
+margin_bottom = 142.5
+custom_fonts/font = SubResource( 2 )
+text = "Shadows & SSAO"
+align = 1
+valign = 1
+
+[node name="EditMouseSensitivity" type="LineEdit" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -340.0
+margin_right = 150.0
+margin_bottom = -245.0
+custom_fonts/font = ExtResource( 3 )
+max_length = 5
+
+[node name="ButtonFullscreen" type="Button" parent="Control/EditMouseSensitivity"]
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "False"
+flat = true
+align = 0
+
+[node name="ButtonVSync" type="Button" parent="Control/EditMouseSensitivity/ButtonFullscreen"]
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "False"
+flat = true
+align = 0
+
+[node name="EditLockFPS" type="LineEdit" parent="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.5
+margin_top = 47.5
+margin_right = 237.5
+margin_bottom = 142.5
+custom_fonts/font = ExtResource( 3 )
+max_length = 5
+
+[node name="ButtonShowFPS" type="Button" parent="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS"]
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "False"
+flat = true
+align = 0
+
+[node name="ButtonAA" type="Button" parent="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS/ButtonShowFPS"]
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "False"
+flat = true
+align = 0
+
+[node name="ButtonShadows" type="Button" parent="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS/ButtonShowFPS/ButtonAA"]
+margin_top = 95.0
+margin_right = 125.0
+margin_bottom = 190.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "False"
+flat = true
+align = 0
+
+[node name="ExitDiscarding" type="Button" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -91.0
+margin_right = 535.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Exit Discarding Changes"
+flat = true
+
+[node name="ExitSave" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -304.0
+margin_top = -91.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Save and Exit"
+flat = true
+[connection signal="text_changed" from="Control/EditMouseSensitivity" to="." method="_on_EditMouseSensitivity_text_changed"]
+[connection signal="text_entered" from="Control/EditMouseSensitivity" to="." method="_on_EditMouseSensitivity_text_entered"]
+[connection signal="pressed" from="Control/EditMouseSensitivity/ButtonFullscreen" to="." method="_on_ButtonFullscreen_pressed"]
+[connection signal="pressed" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync" to="." method="_on_ButtonVSync_pressed"]
+[connection signal="text_changed" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS" to="." method="_on_EditLockFPS_text_changed"]
+[connection signal="text_entered" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS" to="." method="_on_EditLockFPS_text_entered"]
+[connection signal="pressed" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS/ButtonShowFPS" to="." method="_on_ButtonShowFPS_pressed"]
+[connection signal="pressed" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS/ButtonShowFPS/ButtonAA" to="." method="_on_ButtonAA_pressed"]
+[connection signal="pressed" from="Control/EditMouseSensitivity/ButtonFullscreen/ButtonVSync/EditLockFPS/ButtonShowFPS/ButtonAA/ButtonShadows" to="." method="_on_ButtonShadows_pressed"]
+[connection signal="pressed" from="Control/ExitDiscarding" to="." method="_on_ExitDiscarding_pressed"]
+[connection signal="pressed" from="Control/ExitSave" to="." method="_on_ExitSave_pressed"]

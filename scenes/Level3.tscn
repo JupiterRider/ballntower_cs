@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/Level3.cs" type="Script" id=1]
+[ext_resource path="res://scenes/Sun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Fence.tres" type="MeshLibrary" id=3]
+[ext_resource path="res://import/grass.gltf" type="PackedScene" id=4]
+[ext_resource path="res://scenes/FirstPersonPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/PlayerCan.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Desk.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/PlayerBall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/PauseMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://default_env.tres" type="Environment" id=10]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 30, 2, 30 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.337255, 0.490196, 0.27451, 1 )
+
+[sub_resource type="BoxShape" id=4]
+
+[node name="Level3" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Sun" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, -6.18173e-08, 6.18173e-08, 0, 0.707107, 0.707107, -8.74228e-08, 0.707107, -0.707107, 0, 20, -15 )
+
+[node name="Floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 15, 0, -1, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Fences" type="Spatial" parent="."]
+
+[node name="GridMapFences" type="GridMap" parent="Fences"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 1, 0 )
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 0.5, 1, 1 )
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PoolIntArray( 2, 149, 0, 6, 149, -1073741824, 10, 149, 0, 14, 149, 0, 18, 149, 0, 22, 149, 0, 26, 149, 0, 30, 149, 0, 34, 149, 0, 38, 149, 0, 42, 149, 0, 46, 149, 0, 50, 149, 0, 54, 149, 0, 58, 149, 0, 65478, 149, 0, 65482, 149, 0, 65486, 149, 536870912, 65490, 149, 0, 65494, 149, 0, 65498, 149, 0, 65502, 149, 0, 65506, 149, 0, 65510, 149, 0, 65514, 149, 0, 65518, 149, 0, 65522, 149, 0, 65526, 149, 0, 65530, 149, 0, 65534, 149, 0, 2, 65387, 0, 6, 65387, 0, 10, 65387, 0, 14, 65387, 0, 18, 65387, 0, 22, 65387, 0, 26, 65387, 0, 30, 65387, 0, 34, 65387, 0, 38, 65387, 0, 42, 65387, 0, 46, 65387, 0, 50, 65387, 0, 54, 65387, 0, 58, 65387, 0, 65478, 65387, 0, 65482, 65387, -536870912, 65486, 65387, 0, 65490, 65387, 0, 65494, 65387, 0, 65498, 65387, 0, 65502, 65387, -536870912, 65506, 65387, -536870912, 65510, 65387, 0, 65514, 65387, 0, 65518, 65387, 0, 65522, 65387, 0, 65526, 65387, 1073741824, 65530, 65387, 0, 65534, 65387, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="GridMapFences90" type="GridMap" parent="Fences"]
+transform = Transform( -2.18557e-08, 0, 0.1, 0, 1, 0, -0.5, 0, -4.37114e-09, 0, 1, 0 )
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 0.5, 1, 1 )
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PoolIntArray( 2, 149, 0, 6, 149, 0, 10, 149, 0, 14, 149, 0, 18, 149, 0, 22, 149, 536870912, 26, 149, 0, 30, 149, 0, 34, 149, 0, 38, 149, 0, 42, 149, 0, 46, 149, 0, 50, 149, 1073741824, 54, 149, 0, 58, 149, 0, 65478, 149, 0, 65482, 149, 0, 65486, 149, 0, 65490, 149, 0, 65494, 149, 0, 65498, 149, 0, 65502, 149, 0, 65506, 149, 0, 65510, 149, 0, 65514, 149, 0, 65518, 149, 0, 65522, 149, 0, 65526, 149, 0, 65530, 149, 0, 65534, 149, -536870912, 2, 65387, 0, 6, 65387, -536870912, 10, 65387, 0, 14, 65387, 0, 18, 65387, 0, 22, 65387, 0, 26, 65387, 0, 30, 65387, 0, 34, 65387, 0, 38, 65387, 0, 42, 65387, 0, 46, 65387, 0, 50, 65387, 0, 54, 65387, 0, 58, 65387, 536870912, 65478, 65387, 0, 65482, 65387, 0, 65486, 65387, 0, 65490, 65387, 0, 65494, 65387, 0, 65498, 65387, 0, 65502, 65387, 0, 65506, 65387, 0, 65510, 65387, -1073741824, 65514, 65387, 0, 65518, 65387, 0, 65522, 65387, -1073741824, 65526, 65387, 0, 65530, 65387, 1073741824, 65534, 65387, 1610612736 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Grasses" type="Spatial" parent="."]
+
+[node name="Grass1" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.5, 0.5, 0 )
+
+[node name="Grass2" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( -0.0472405, 0, -0.194341, 0, 0.2, 0, 0.194341, 0, -0.0472405, 11.3507, 0.5, -7.27046 )
+
+[node name="Grass3" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( 0.00573445, 0, -0.199918, 0, 0.2, 0, 0.199918, 0, 0.00573445, -3.02871, 0.5, -5.27782 )
+
+[node name="Grass4" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( 0.0929288, 0, -0.177099, 0, 0.2, 0, 0.177099, 0, 0.0929288, -8.66917, 0.5, -11.3456 )
+
+[node name="Grass5" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( -0.0640116, 0, -0.18948, 0, 0.2, 0, 0.18948, 0, -0.0640116, -11.1612, 0.5, 0.965188 )
+
+[node name="Grass6" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( 0.0508721, 0, -0.193422, 0, 0.2, 0, 0.193422, 0, 0.0508721, -7.22378, 0.5, 10.0363 )
+
+[node name="Grass7" parent="Grasses" instance=ExtResource( 4 )]
+transform = Transform( -0.115676, 0, 0.163153, 0, 0.2, 0, -0.163153, 0, -0.115676, 10.0213, 0.5, 6.84645 )
+
+[node name="FirstPersonPlayer" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -8 )
+
+[node name="Cans" type="Spatial" parent="."]
+
+[node name="PlayerCan1" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025, 2.55, 9.637 )
+
+[node name="PlayerCan2" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966562, 2.55, 9.637 )
+
+[node name="PlayerCan3" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01604, 2.55, 9.637 )
+
+[node name="PlayerCan4" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502644, 3.45571, 9.637 )
+
+[node name="PlayerCan5" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49665, 3.45571, 9.637 )
+
+[node name="PlayerCan6" parent="Cans" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00158513, 4.36333, 9.637 )
+
+[node name="Desk" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10 )
+
+[node name="Area" type="Area" parent="Desk"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Desk/Area"]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, 0 )
+shape = SubResource( 4 )
+
+[node name="PlayerBall" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 10 )
+[connection signal="body_entered" from="Desk/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Desk/Area" to="." method="_on_Area_body_exited"]

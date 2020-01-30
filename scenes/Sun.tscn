@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Sun" type="DirectionalLight"]
+transform = Transform( -1, -6.18172e-08, 6.18172e-08, 0, 0.707107, 0.707107, -8.74228e-08, 0.707107, -0.707107, 0, 20, -15 )
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.0
+directional_shadow_blend_splits = true
+directional_shadow_normal_bias = 0.2
+directional_shadow_bias_split_scale = 0.7
+directional_shadow_max_distance = 50.0

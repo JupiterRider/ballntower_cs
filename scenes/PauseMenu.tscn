@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/Jockey_One/JockeyOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/SettingsMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/PauseMenu.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.270588, 0.54902, 0.654902, 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -910.0
+margin_top = -490.0
+margin_right = 910.0
+margin_bottom = 490.0
+
+[node name="LabelTitle" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -910.0
+margin_right = 910.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.494118, 0.784314, 0.313726, 1 )
+custom_colors/font_color_shadow = Color( 0.337255, 0.490196, 0.27451, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+text = "labelTitel"
+align = 1
+valign = 1
+
+[node name="DescriptionText" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -910.0
+margin_top = 140.0
+margin_right = 910.0
+margin_bottom = 444.5
+custom_fonts/font = SubResource( 2 )
+text = "descriptionText"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -107.0
+margin_top = -45.5
+margin_right = 107.0
+margin_bottom = 45.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.5
+margin_top = 45.5
+margin_right = 95.5
+margin_bottom = 136.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Settings"
+flat = true
+
+[node name="RestartLevelButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.5
+margin_top = 136.5
+margin_right = 151.5
+margin_bottom = 227.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Restart Level"
+flat = true
+
+[node name="ExitButton" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.5
+margin_top = 227.5
+margin_right = 120.5
+margin_bottom = 318.5
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Quit Game"
+flat = true
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 2 )]
+visible = false
+[connection signal="pressed" from="Control/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Control/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Control/RestartLevelButton" to="." method="_on_RestartLevelButton_pressed"]
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_ExitButton_pressed"]
