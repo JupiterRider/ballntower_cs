@@ -22,5 +22,5 @@ Feedback is welcome.
 - Hold <b>Left Mouse Button</b> to power up
 - <b>ESC</b> to open the menu
 
-## Prebuilds:
-Can be found on [itch.io](https://juppi.itch.io/ballntower).
+## Download:
+Builds can be found on [itch.io](https://juppi.itch.io/ballntower).
