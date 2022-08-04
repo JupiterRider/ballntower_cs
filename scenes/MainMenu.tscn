@@ -45,11 +45,11 @@ anchor_right = 0.5
 margin_left = -232.0
 margin_right = 232.0
 margin_bottom = 140.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.494118, 0.784314, 0.313726, 1 )
 custom_colors/font_color_shadow = Color( 0.337255, 0.490196, 0.27451, 1 )
 custom_constants/shadow_offset_x = 4
 custom_constants/shadow_offset_y = 4
+custom_fonts/font = SubResource( 1 )
 text = "Ball'n'Tower"
 align = 1
 valign = 1
@@ -64,10 +64,10 @@ margin_top = -45.5
 margin_right = 54.5
 margin_bottom = 45.5
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Play"
 flat = true
 __meta__ = {
@@ -84,10 +84,10 @@ margin_top = 45.5
 margin_right = 95.5
 margin_bottom = 136.5
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Settings"
 flat = true
 
@@ -101,10 +101,10 @@ margin_top = 136.5
 margin_right = 120.5
 margin_bottom = 227.5
 mouse_default_cursor_shape = 2
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.392157, 0.392157, 0.392157, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Quit Game"
 flat = true
 __meta__ = {
@@ -113,6 +113,7 @@ __meta__ = {
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 3 )]
 visible = false
+
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Control/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Control/ExitButton" to="." method="_on_ExitButton_pressed"]
