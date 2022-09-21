@@ -62,7 +62,7 @@ public class PauseMenu : Control
                 // Set the pause menu visible.
                 Show();
                 // Show the cursor. 
-                Input.MouseMode = Input.MouseModeEnum.Captured;
+                Input.MouseMode = Input.MouseModeEnum.Visible;
                 // Focus on a button. Required for keyboard navigation.
                 ContinueButton.GrabFocus();
             }

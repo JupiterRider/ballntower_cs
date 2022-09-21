@@ -44,7 +44,7 @@ public class EndMenu : Control
         EditMouseSensitivity = GetNode<LineEdit>("SettingsMenu/Control/EditMouseSensitivity");
 
         // Set cursor visible.
-        Input.MouseMode = Input.MouseModeEnum.Captured;
+        Input.MouseMode = Input.MouseModeEnum.Visible;
         // Focus on a button. Required for keyboard navigation.
         NextLevelButton.GrabFocus();
 
