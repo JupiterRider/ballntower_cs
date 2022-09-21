@@ -60,7 +60,7 @@ public class FirstPersonPlayer : KinematicBody
     public override void _Ready()
     {   
         // Hide the cursor and capture the mouse.
-        Input.SetMouseMode(Input.MouseMode.Captured);
+        Input.MouseMode = Input.MouseModeEnum.Captured;
 
         HeadY = GetNode<Spatial>("Head_y");
         HeadX = GetNode<Spatial>("Head_y/Head_x");
