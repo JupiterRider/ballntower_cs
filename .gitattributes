@@ -1,0 +1,5 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
